@@ -1,5 +1,6 @@
 import 'package:devnology/src/bloc/bottom_navigation/bottom_navigation_bloc.dart';
-import 'package:devnology/src/presentation/bottom_navigation/bottom_navigation.dart';
+import 'package:devnology/src/presentation/navigation/bottom_navigation.dart';
+import 'package:devnology/src/presentation/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (BuildContext context) => NavigationCubit())
       ],
       child: MaterialApp(
-        home: const BottomNavigationBarWidget(),
+        home: const NavigationBarWidget(),
         title: 'Devnology',
         theme: ThemeData(
           primaryColor: const Color(0xff2E3746),
