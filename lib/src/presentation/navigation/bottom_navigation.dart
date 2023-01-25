@@ -1,5 +1,7 @@
+import 'package:devnology/src/presentation/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../bloc/bottom_navigation/bottom_navigation_bloc.dart';
 import '../../bloc/bottom_navigation/bottom_navigation_state.dart';
@@ -17,15 +19,23 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Devnology'),
+        title: SvgPicture.asset(
+          'assets/images/logo.svg',
+          height: 26,
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset('assets/icons/message.svg')),
+          IconButton(
+              onPressed: () {}, icon: SvgPicture.asset('assets/icons/bell.svg'))
+        ],
       ),
       bottomNavigationBar: const BottomNavigationWidget(),
       body: BlocBuilder<NavigationCubit, NavigationState>(
           builder: (context, state) {
         if (state.navbarItem == NavbarItem.home) {
-          return const Center(
-            child: Text('Home'),
-          );
+          return const HomePage();
         } else if (state.navbarItem == NavbarItem.search) {
           return const Center(
             child: Text('Search'),
