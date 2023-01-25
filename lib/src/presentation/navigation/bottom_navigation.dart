@@ -25,10 +25,13 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/message.svg')),
+            onPressed: () {},
+            icon: SvgPicture.asset('assets/icons/message.svg'),
+          ),
           IconButton(
-              onPressed: () {}, icon: SvgPicture.asset('assets/icons/bell.svg'))
+            onPressed: () {},
+            icon: SvgPicture.asset('assets/icons/bell.svg'),
+          )
         ],
       ),
       bottomNavigationBar: const BottomNavigationWidget(),
