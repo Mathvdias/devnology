@@ -1,4 +1,8 @@
+import 'package:devnology/src/bloc/bottom_navigation/bottom_navigation_bloc.dart';
+import 'package:devnology/src/presentation/bottom_navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,58 +13,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+    return MultiProvider(
+      providers: [
+        BlocProvider(create: (BuildContext context) => NavigationCubit())
+      ],
+      child: MaterialApp(
+        home: const BottomNavigationBarWidget(),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primaryColor: const Color(0xff2E3746),
+          primarySwatch: const MaterialColor(
+            0xff2E3746,
+            {
+              50: Color(0xff5A6476),
+              100: Color(0xff4F4F4F),
+              200: Color(0xff696969),
+              300: Color(0xff808080),
+              500: Color(0xffA9A9A9),
+              600: Color(0xffC0C0C0),
+              700: Color(0xffD3D3D3),
+              800: Color(0xffDCDCDC),
+              900: Color(0xff000000),
+            },
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
