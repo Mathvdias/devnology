@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         home: const BottomNavigationBarWidget(),
-        title: 'Flutter Demo',
+        title: 'Devnology',
         theme: ThemeData(
           primaryColor: const Color(0xff2E3746),
           primarySwatch: const MaterialColor(

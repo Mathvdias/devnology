@@ -66,7 +66,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               ),
             ],
             onTap: (index) {
-              BlocProvider.of<NavigationCubit>(context).getNavbarItem(index);
+              BlocProvider.of<NavigationCubit>(context).getIndex(index);
             },
           );
         },

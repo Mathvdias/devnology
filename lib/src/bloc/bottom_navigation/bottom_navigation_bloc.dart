@@ -5,7 +5,7 @@ import 'bottom_navigation_state.dart';
 class NavigationCubit extends Cubit<NavigationState> {
   NavigationCubit() : super(const NavigationState(NavbarItem.home, 0));
 
-  void getNavbarItem(int navbarItem) {
+  void getIndex(int navbarItem) {
     switch (navbarItem) {
       case 0:
         emit(const NavigationState(NavbarItem.home, 0));
