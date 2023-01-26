@@ -1,6 +1,8 @@
 import 'package:badges/badges.dart';
 import 'package:devnology/src/presentation/common/colors.dart';
 import 'package:devnology/src/presentation/common/products.dart';
+import 'package:devnology/src/presentation/pages/splash/splash_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -171,7 +173,7 @@ class _ProductPageState extends State<ProductPage>
                   ),
                 ),
                 ButtomWidget(
-                  function: () {},
+                  function: () => Navigator.pop(context),
                   text: 'ADD TO CART',
                 ),
               ],

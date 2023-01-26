@@ -1,4 +1,6 @@
 import 'package:devnology/src/infra/models/products_model.dart';
+import 'package:devnology/src/presentation/pages/finish/finish_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/buttom_widget.dart';
@@ -83,7 +85,10 @@ class _CartPageState extends State<CartPage> {
                   ],
                 ),
                 ButtomWidget(
-                  function: () {},
+                  function: () => Navigator.of(context).push(
+                    CupertinoPageRoute(
+                        builder: (context) => const FinishPage()),
+                  ),
                   text: 'CHECKOUT',
                 ),
               ],
