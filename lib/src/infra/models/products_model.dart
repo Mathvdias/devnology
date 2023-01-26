@@ -7,6 +7,7 @@ class ProductsModel extends Product {
       required super.description,
       required super.image,
       required super.about});
+
   static List<Product> products = [
     ProductsModel(
       name: 'Lenovo - IdeaPad\nL340 15 Gaming',
