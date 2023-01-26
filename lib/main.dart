@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (BuildContext context) => NavigationCubit())
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: const SplashPage(),
         title: 'Devnology',
         theme: ThemeData(

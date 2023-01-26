@@ -21,7 +21,11 @@ class WrapImageInkwell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
-      SvgPicture.asset('assets/images/banner.svg'),
+      SvgPicture.asset(
+        'assets/images/banner.svg',
+        width: MediaQuery.of(context).size.width * .86,
+        // height: MediaQuery.of(context).size.height * .22,
+      ),
       Positioned.fill(
           child: Material(
               color: Colors.transparent,
