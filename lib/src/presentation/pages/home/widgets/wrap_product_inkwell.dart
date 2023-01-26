@@ -5,13 +5,13 @@ class WrapProductInkwell extends StatelessWidget {
   final double price;
   final String image;
   final String text;
-  final Function addProduct;
+  final Function goToProduct;
   const WrapProductInkwell({
     Key? key,
     required this.image,
     required this.text,
     required this.price,
-    required this.addProduct,
+    required this.goToProduct,
   }) : super(key: key);
 
   @override
@@ -58,7 +58,7 @@ class WrapProductInkwell extends StatelessWidget {
                     color: Colors.transparent,
                     child: InkWell(
                       borderRadius: BorderRadius.circular(10),
-                      onTap: () => addProduct(),
+                      onTap: () => goToProduct(),
                     )))
           ],
         ),
