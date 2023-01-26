@@ -40,7 +40,7 @@ class WrapProductInkwell extends StatelessWidget {
                     ),
                     FittedBox(
                       child: Text(
-                        '\$ 717,80',
+                        '\$ ',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             fontSize: 11, fontWeight: FontWeight.w700),
                       ),
