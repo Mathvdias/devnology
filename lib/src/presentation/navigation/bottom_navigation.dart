@@ -1,3 +1,4 @@
+import 'package:devnology/src/presentation/pages/cart/cart_page.dart';
 import 'package:devnology/src/presentation/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,9 +45,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
             child: Text('Search'),
           );
         } else if (state.navbarItem == NavbarItem.cart) {
-          return const Center(
-            child: Text('Cart'),
-          );
+          return const CartPage();
         } else if (state.navbarItem == NavbarItem.profile) {
           return const Center(
             child: Text('Profile'),

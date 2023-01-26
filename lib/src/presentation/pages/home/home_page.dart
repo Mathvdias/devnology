@@ -4,8 +4,6 @@ import 'package:devnology/src/presentation/common/latest_list.dart';
 import 'package:devnology/src/presentation/pages/home/widgets/wrap_product_inkwell.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../navigation/bottom_navigation.dart';
 import '../product/product_page.dart';
 
 class HomePage extends StatefulWidget {
