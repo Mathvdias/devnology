@@ -1,7 +1,8 @@
 import 'package:devnology/src/presentation/common/category_list.dart';
 import 'package:devnology/src/presentation/common/latest_list.dart';
+import 'package:devnology/src/presentation/pages/home/widgets/wrap_product_inkwell.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,16 +28,12 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.w700,
                   ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: icons,
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             Text(
               "Latest",
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -44,14 +41,19 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.w700,
                   ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(children: latest),
             ),
-            
+            const SizedBox(height: 15),
+            Wrap(
+              children: [
+                WrapProductInkwell(
+                  image: 'assets/images/pc1.svg',
+                )
+              ],
+            )
           ],
         ),
       ),
