@@ -1,5 +1,7 @@
 import 'package:devnology/src/presentation/common/category_list.dart';
+import 'package:devnology/src/presentation/common/latest_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,15 +22,36 @@ class _HomePageState extends State<HomePage> {
           children: [
             Text(
               "Categories",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(fontSize: 30),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                  ),
+            ),
+            const SizedBox(
+              height: 15,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: icons,
-            )
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              "Latest",
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                  ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(children: latest),
+            ),
+            
           ],
         ),
       ),
