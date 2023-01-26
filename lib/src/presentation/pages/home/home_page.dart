@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../navigation/bottom_navigation.dart';
+import '../product/product_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,10 +70,13 @@ class _HomePageState extends State<HomePage> {
                         image: product.image,
                         text: product.name,
                         goToProduct: () {
-                          Navigator.of(context).pushReplacement(
-                              CupertinoPageRoute(
-                                  builder: (context) =>
-                                      const NavigationBarWidget()));
+                          Navigator.of(context).push(
+                            CupertinoPageRoute(
+                              builder: (context) => ProductPage(
+                                product: product,
+                              ),
+                            ),
+                          );
                         },
                       );
                     },
