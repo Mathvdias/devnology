@@ -1,8 +1,10 @@
+import 'package:badges/badges.dart';
 import 'package:devnology/src/presentation/common/colors.dart';
 import 'package:devnology/src/presentation/common/products.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../infra/models/products_model.dart';
 import '../../common/buttom_widget.dart';
 
 class ProductPage extends StatefulWidget {
@@ -34,9 +36,15 @@ class _ProductPageState extends State<ProductPage>
           height: 26,
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/cart.svg'),
+          Badge(
+            badgeStyle:
+                const BadgeStyle(badgeColor: AppColors.colorLightYellow),
+            position: BadgePosition.bottomEnd(end: 5, bottom: 5),
+            badgeContent: Text('${ProductsModel.products.length}'),
+            child: IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset('assets/icons/cart.svg'),
+            ),
           ),
         ],
       ),
